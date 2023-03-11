@@ -19,8 +19,9 @@ map = TileMap('tile_map_csv_Floor.csv', spritesheet )
 player.position.x, player.position.y = map.start_x, map.start_y
 
 ################################# GAME LOOP ##########################
+pygame.key.set_repeat()
 while running:
-    clock.tick(5)
+    clock.tick(8)
     ################################# CHECK PLAYER INPUT #################################
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -34,7 +35,8 @@ while running:
                 player.UP_KEY = True
             elif event.key == pygame.K_DOWN:
                 player.DOWN_KEY = True
-                #player.DOWN_KEY = False
+
+
 
     ################################# UPDATE/ Animate SPRITE #################################
     player.update()
