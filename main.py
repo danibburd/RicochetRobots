@@ -15,7 +15,7 @@ spritesheet = Spritesheet('spritesheet_real.png')
 player = Player()
 
 #################################### LOAD THE LEVEL #######################################
-map = TileMap('tile_map_csv_Floor.csv', spritesheet )
+map = TileMap('tile_map_csv_all_walls_Floor.csv', spritesheet )
 player.position.x, player.position.y = map.start_x, map.start_y
 
 ################################# GAME LOOP ##########################

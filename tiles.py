@@ -44,9 +44,14 @@ class TileMap():
             x = 0
             for tile in row:
                 if tile == '0':
-                    tiles.append(Tile('gray_tile.png', x * self.tile_size, y * self.tile_size, self.spritesheet))
+                    tiles.append(Tile('1_gray_tile.png', x * self.tile_size, y * self.tile_size, self.spritesheet))
                 elif tile == '1':
-                    self.start_x, self.start_y = x * self.tile_size, y * self.tile_size
+                    tiles.append(Tile('2_right_wall.png', x * self.tile_size, y * self.tile_size, self.spritesheet))
+                elif tile == '2':
+                    tiles.append(Tile('3_bottom_wall.png', x * self.tile_size, y * self.tile_size, self.spritesheet))
+                elif tile == '3':
+                    tiles.append(Tile('4_both_walls.png', x * self.tile_size, y * self.tile_size, self.spritesheet))
+                    #self.start_x, self.start_y = x * self.tile_size, y * self.tile_size
                     # Move to next tile in current row
                 x += 1
 

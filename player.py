@@ -1,7 +1,9 @@
 import pygame
 from spritesheet import Spritesheet
 from tiles import *
+
 class Player(pygame.sprite.Sprite):
+    moveList = []
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = Spritesheet('spritesheet_real.png').parse_sprite('robot.png')
@@ -10,19 +12,18 @@ class Player(pygame.sprite.Sprite):
         self.position = pygame.math.Vector2(0, 0)
         
     def listOfMoves(self):
-        moveList = []
         print("Input moves with the arrow keys. Press enter to confirm your moves.")
         while self.ENTER_KEY == False:
             if self.LEFT_KEY:
-                moveList.append('LEFT')
+                self.moveList.append('LEFT')
             elif self.RIGHT_KEY:
-                moveList.append('RIGHT')
+                self.moveList.append('RIGHT')
             elif self.UP_KEY:
-                moveList.append('UP')
+                self.moveList.append('UP')
             elif self.DOWN_KEY:
-                moveList.append('DOWN')
+                self.moveList.append('DOWN')
             elif self.ENTER_KEY:
-                return moveList
+                return self.moveList
 
     def draw(self, display):
         display.blit(self.image, (self.rect.x, self.rect.y))
