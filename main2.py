@@ -34,26 +34,3 @@ def makeMove():
     return
 
 #Checks for any collisions in the way 
-def checkCollision(board, isRow, isLeft, x, y):
-        if(isRow):
-            pos = x
-            line = board.getRow(y)
-        else:
-            pos = y
-            line = board.getCol(x)
-        
-        amt = 0
-        if(isLeft):
-            while(pos >= 0):
-                if (pos != 0 or line[pos-1] == 0):
-                    pos -= 1
-                else:
-                    return amt
-        else:
-            len = line.length
-            while(pos <= len):
-                if (pos != len or line[pos+1] == 0):
-                    pos += 1
-                    amt+=1
-                else:
-                    return amt

@@ -14,7 +14,7 @@ class Tile(pygame.sprite.Sprite):
 class TileMap():
     def __init__(self, filename, spritesheet):
         self.tile_size = 50
-        self.start_x, self.start_y = 0, 0
+        #self.start_x, self.start_y = 100, 100
         self.spritesheet = spritesheet
         self.tiles = self.load_tiles(filename)
         self.map_surface = pygame.Surface((self.map_w, self.map_h))
